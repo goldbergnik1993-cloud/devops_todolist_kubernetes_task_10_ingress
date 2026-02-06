@@ -7,13 +7,14 @@ kind create cluster --config cluster.yml
 ./bootstrap.sh
 
 Перевірити, що pod застосунку запущений:
-kubectl get pods
+kubectl get pods -n todoapp
 
 Перевірити, що Ingress Controller працює:
 kubectl get pods -n ingress-nginx
 
-Перевірити створення Ingress:
-kubectl get ingress
+Перевірити створення Service та Ingress:
+kubectl get svc -n todoapp
+kubectl get ingress -n todoapp
 
 Відкрити в браузері:
 http://localhost
